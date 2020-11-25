@@ -1,0 +1,277 @@
+/* 구역을 나눌 떄 가로로 먼저 나누고, 세로로 나눠라 */
+/* CSS는 부모 스타일을 덮어 쓴다. */
+/* 선택자(Selector): # or . */
+/* 기본 브라우저의 css 세팅을 지워야 한다. */
+/* 쌓임맥락(cascading context) 및 블록서식문맥(block format context) 확인 필요 */
+/* CSS 우선 순위 : https://www.zerocho.com/category/CSS/post/588cb95ca63e64132496a5d5 */
+/* 패딩을 둬서 a태그와 같이 클릭하는 공간을 넓게 해주는 것이 좋음... */
+
+* { /*모든 태그*/
+    box-sizing: border-box;    
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
+}
+#fixed {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+.blind { /*시각장애인을 위한 속성, 웹접근성*/
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+}
+.relative {
+    position: relative;
+}
+/* div가 생략된 것 */
+.center_align{
+    margin: 0 auto;
+    width: 1080px; 
+    /* pixel : 상대적인 길이 */
+}
+header {
+    height: 170px;
+}
+#header_top {
+    float: right;
+    margin-top: 8px;
+}
+#header_top span{
+    color: #888;
+    letter-spacing: -1px;
+    font-size: 11px;
+    line-height: 22px;
+}
+
+#header_search {
+    clear: both;
+    padding-top: 12px;
+}
+#header_search a {
+    text-decoration: none;
+    /* a태그의 밑줄 없애기 */
+}
+
+#header_search h1 { /*자식(child) 선택자*/
+    width: 198px;
+    height: 48px;
+    display: inline-block;
+    background: url(img/sp_search.png) -4px -4px no-repeat;
+    /* background-image: url(img/sp_search.png);
+        background-position: -4px -10px; (-면 왼쪽/위쪽)
+        background-repeat: no-repeat; */
+    
+    /* div는 display: block이기 때문에 margin이 있음. 
+        inline: 컨텐츠 크기에 맞춰 크기를 차지함. (span 태그)
+        inline block: 너비, 높이를 지정할 수 있음.
+    */
+    
+    vertical-align: middle;
+    position: relative;
+    top: -5px;
+    left: 1px;
+}
+#header_search h1 span {
+    display: none;
+}
+
+#header_search h2 {
+    display: none; /*화면에 안보이게 하기, display: None을 사용하면 Screen Reader에서 보이지 않음..*/
+}
+/* #header_center h1 { 자손(descendant) 선택자
+} */
+
+#header_search fieldset {
+    margin-left: 18px;
+    padding: 12px 0px 12px 10px;
+    border: 2px solid #03cf5d; /* hex 표기법 */
+    width: 521px;
+    height: 49px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;    
+    /* position을 static에서 벗어나게 하여 Containing block으로 만든다.
+        absolute가 붙을 수 있도록*/
+}
+
+#header_search fieldset input {
+    border: none;
+    padding: 0;
+    outline: none;
+    vertical-align: top;
+    width: 395px;
+    height: 23px;
+}
+
+#header_search fieldset button {
+    width: 49px;
+    height: 49px;
+    border: none;
+    padding: 0;
+    background: #03cf5d;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+}
+#search_keyboard {
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
+    background-repeat: no-repeat;
+    background-position: -33px -60px;
+    width: 19px;
+    height: 11px;
+    display: inline-block;
+    margin: 0 6px;
+    vertical-align: middle;
+}
+#search_history {
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
+    background-repeat: no-repeat;
+    background-position: -87px -60px;
+    width: 9px;
+    height: 4px;
+    display: inline-block;
+    margin: 0 6px;
+    vertical-align: middle;
+}
+
+#search_image { 
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    margin: 14px;
+    background-image: url(img/sp_search.png); 
+    background-position: -3px -60px; 
+    background-repeat: no-repeat;
+}
+
+nav {
+    height: 46px;
+    border-top: 1px solid #f1f3f6;
+    border-bottom: 1px solid #d1d8e4;
+}
+
+nav ul {
+    display: inline-block;
+    margin: 0;
+    padding: 16px 0 0 4px;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav li:first-child span:first-child {
+    width: 25px;
+    background-position: 0 -285px;
+    margin-left: 0;
+}
+
+nav li span:first-child {
+    height: 16px;
+    display: inline-block;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
+    background-repeat: no-repeat;
+    margin-left: 10px;
+}
+nav li:nth-child(2) span:first-child {
+    width: 27px;
+    background-position: -279px -52px;
+}
+nav li:nth-child(3) span:first-child {
+    width: 40px;
+    background-position: -100px -182px;
+}
+nav li:nth-child(4) span:first-child {
+    width: 40px;
+    background-position: -101px -156px;
+}
+nav li:nth-child(5) span:first-child {
+    width: 26px;
+    background-position: -279px -156px;
+}
+nav li:nth-child(6) span:first-child {
+    width: 25px;
+    background-position: -70px -285px;
+}
+nav li:nth-child(7) span:first-child {
+    width: 35px;
+    background-position: -125px -130px;
+}
+
+nav li:nth-child(8) span:first-child {
+    width: 26px;
+    background-position: -279px -208px;
+}
+
+nav li:nth-child(9) span:first-child {
+    width: 26px;
+    background-position: -128px -104px;
+}
+
+nav li:nth-child(10) span:first-child {
+    width: 26px;
+    background-position: -36px -259px;
+}
+
+nav li:nth-child(11) span:first-child {
+    width: 39px;
+    background-position: -151px -156px;
+}
+
+nav li:nth-child(12) span:first-child {
+    width: 26px;
+    background-position: -279px -130px;
+}
+
+nav li:nth-child(13) span:first-child {
+    width: 26px;
+    background-position: -234px -233px;
+}
+
+nav li:nth-child(14) span:first-child {
+    width: 26px;
+    background-position: -72px -259px;
+}
+
+nav li:nth-child(15) span:first-child {
+    width: 13px;
+    background-position: -140px -78px;
+}
+
+nav li:nth-child(16) span:first-child {
+    width: 26px;
+    background-position: -279px 0;
+}
+.nav_divider {
+    display: inline-block;
+    margin: 18px 16px 0;
+    width: 1px;
+    height: 14px;
+    background: #ebeef3;
+}
+
+#search_ranking {
+    position: absolute;
+    top: 16px;
+    right: 100px;
+}
+
+#rank_number {
+    margin-top: -9px;
+    color: #00ab33;
+    font-size: 16px;
+}

@@ -1,0 +1,85 @@
+ html, body {
+    margin: 0;
+}
+body {
+    background-color: whitesmoke;
+    width: 100%;
+}
+header {
+    width: 100%;
+    min-height: 100px;
+    background-color: white;
+}
+.clicked {
+    color: blue;
+}
+.search_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    font-style: italic;    
+
+    text-align: center;
+
+    margin: 0; 
+}
+input {
+    height: 32px;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    
+    font-size: 20px;
+
+    margin: 0 0 0 20px;
+    padding: 20px 5px 0 5px; 
+}
+.memo_wrapper {
+    display: grid;
+    row-gap: 2px;
+    column-gap: 2px;
+}
+.memo {
+    padding: 5px;    
+    outline: none;
+    resize: none;
+    border: none;
+    font-size: 1rem;
+    color: white;
+}
+.memo:focus {
+    border: 2px solid;
+    border-style: dashed;
+}
+
+.memo_0 {
+    background-color: #00a8ff;    
+}
+.memo_1 {
+    background-color: #9c88ff;;    
+}
+.memo_2 {
+    background-color: #fbc531;
+}
+.memo_3 {
+    background-color:#4cd137; 
+}
+.memo_4 {
+    background-color:#e84118;
+}
+.memo_5 {
+    background-color:#f5f6fa;    
+    color: black;
+}
+.memo_6 {
+    background-color:#7f8fa6; 
+}
+.memo_7 {
+    background-color:#273c75; 
+}

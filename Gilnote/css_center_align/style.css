@@ -1,0 +1,31 @@
+.dot-wrapper {
+    text-align: center;
+    /* dot이 inline-block이기 때문에 가능 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    /* 기준점 변경 원시적인 방법*/
+    /* margin-left: -310.545px;
+    margin-top: -50px; */
+
+    transform: translate(-50%, -50%);
+}
+.dot { 
+    width: 100px;
+    height: 100px;
+    background-color: orangered;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    /* inline 가운데 정렬 */
+
+    line-height: 100px; 
+    /* line-height = height 이면 inline 세로 가운데 정렬 */
+    
+    /* margin: 0 auto; */
+    /* 박스 가운데 정렬 */
+    /* float: left;
+    margin: 0 10px; */
+    display: inline-block;
+}
